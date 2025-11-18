@@ -23,4 +23,5 @@ function wrapPs(peripheralName)
 end
 
 x = wrapPs("rs_bridge")
+print("hei")
 print(x.getAvailableExternalItemStorage())
