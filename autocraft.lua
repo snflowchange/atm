@@ -22,8 +22,8 @@ function wrapPs(peripheralName)
     end
 end
 
-pt, st = wrapPs("rs_bridge")
+label = "NegerCraft"
 
-x = pt[1]
+rs = wrapPs("rs_bridge")[1]
 
-print(x.isOnline())
+print(rs.isOnline())
