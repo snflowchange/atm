@@ -92,7 +92,7 @@ function checkTable()
     clearScreen()
 
     for _, item in ipairs(rsItems) do
-        checkMe(item[2], item[1], item[3])
+        checkRs(item[2], item[1], item[3])
     end
 end
 
