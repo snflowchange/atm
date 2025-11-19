@@ -34,7 +34,7 @@ rsItems = {
 
 function CenterT(text, line, txtback, txtcolor, pos)
     local monX, monY = mon.getSize()
-    mon.setBackGroundColor(txtback)
+    mon.setBackgroundColor(txtback)
     mon.setTextColor(txtcolor)
     
     local length = #text
