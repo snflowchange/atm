@@ -58,7 +58,7 @@ function clearScreen()
 end
 
 function checkRs(checkName, displayName, low)
-    local craftables = rs.getCraftables()
+    local craftables = rs.getCraftableItems()
     print(craftables)
 end
 
