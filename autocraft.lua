@@ -59,9 +59,48 @@ end
 
 function checkRs(checkName, displayName, low)
     local craftables = rs.getCraftableItems()
-    print(craftables)
+    
+    for _, entry in ipairs(craftables) do
+
+        local item = entry.fingerprint
+        local itemName = item.name
+        local numItems = item.count or 0
+
+        if itemName == checkName then
+            row = row + 1
+            CenterT(displayName, row + 1, colors.black, colors.lightGray, "left")
+
+            if numItems < low then
+                CenterT(numItems .. "/" .. low, row + 1, colors.black, colors.red, "right")
+
+                if not rs.isCrafting({name = itemName}) then
+                    local missing = low - numItems
+                    rs.craftItem( {name=itemName, count = missing} )
+                    print("Craft " .. missing .. " " .. displayName)
+                end
+            else
+                CenterT(numItems .. "/" .. low, row + 1, colors.black, colors.green, "right")
+            end
+        end
+    end
 end
 
-print(checkRs("test", "test", "test"))
+
+
+function checkTable()
+    row = 1
+    clearScreen()
+
+    for _, item in ipairs(rsItems) do
+        checkMe(item[2], item[1], item[3])
+    end
+end
+
+while true do
+    checkTable()
+    sleep(3)
+end
+
+
 
 
