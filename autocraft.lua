@@ -22,6 +22,6 @@ function wrapPs(peripheralName)
     end
 end
 
-x = wrapPs("rs_bridge")
-print("hei")
+x = wrapPs("rs_bridge")[1][1]
+
 print(x.isOnline())
